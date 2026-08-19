@@ -8,8 +8,10 @@ class Solution {
         for (int right = 0; right < s.length(); right++) {
             char c = s.charAt(right);
 
-            if (map.containsKey(c)) {
-                left = Math.max(left, map.get(c) + 1);
+            while (map.containsKey(c)) {
+                char left_ch=s.charAt(left);
+                map.remove(left_ch);
+                left++;
             }
 
             map.put(c, right);
