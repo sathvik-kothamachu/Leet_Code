@@ -6,7 +6,7 @@ class Solution:
         for right in range(len(nums)):
             if current_sum<0:
                 current_sum=0
-                left=right
+                left+=1
             current_sum+=nums[right]
             max_sum=max(max_sum,current_sum)
         return max_sum
